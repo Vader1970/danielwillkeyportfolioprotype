@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 interface AnimatedTextProps {
@@ -12,12 +11,18 @@ interface AnimatedTextProps {
   immediate?: boolean;
 }
 
-export default function AnimatedText({ text, className = "", immediate = false }: AnimatedTextProps) {
+export default function AnimatedText({
+  text,
+  className = "",
+  immediate = false,
+  quickAppear = false,
+  once = true,
+}: AnimatedTextProps) {
   const words = text.split(" ");
   const ref = useRef<HTMLDivElement>(null);
   const [forceVisible, setForceVisible] = useState(immediate);
   const isInView = useInView(ref, {
-    once: true,
+    once: once,
     margin: "0px 0px -50% 0px",
     amount: 0.01,
   });
@@ -30,11 +35,11 @@ export default function AnimatedText({ text, className = "", immediate = false }
 
   const container = {
     hidden: { opacity: 0 },
-    visible: (i = 1) => ({
+    visible: ({ quick }) => ({
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // Slowed down from 0.12
-        delayChildren: 0.04 * i,
+        staggerChildren: quick ? 0.02 : 0.15,
+        delayChildren: 0.04,
       },
     }),
   };
@@ -42,16 +47,15 @@ export default function AnimatedText({ text, className = "", immediate = false }
   const child = {
     hidden: {
       opacity: 0,
-      y: 30, // Increased from 20 for more noticeable movement
+      y: 20,
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         type: "spring",
-        damping: 9, // Reduced from 12 for more bounce
-        stiffness: 80, // Reduced from 100 for smoother animation
-        duration: 0.6, // Added explicit duration
+        damping: 12,
+        stiffness: 100,
       },
     },
   };
@@ -63,6 +67,7 @@ export default function AnimatedText({ text, className = "", immediate = false }
       variants={container}
       initial='hidden'
       animate={isInView || forceVisible ? "visible" : "hidden"}
+      custom={{ quick: quickAppear }}
     >
       {words.map((word, index) => (
         <motion.span key={index} className='inline-block mr-2' variants={child}>
