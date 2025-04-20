@@ -18,30 +18,36 @@ const About = () => {
             <TiltCard className='p-6 md:p-8'>
               <h3 className='text-xl md:text-2xl font-bold mb-4'>UX/UI Designer & Web Developer</h3>
               <p className='text-light/80 mb-4'>
-                I&apos;m Daniel Wilkey, a UX/UI Designer & Web Developer based in Christchurch, New Zealand. With a
-                passion for crafting beautiful, functional digital experiences, I specialize in end-to-end web
-                development.
+                Hi there, I&apos;m Daniel - a UX/UI Designer and Web Developer living in Christchurch, New Zealand. I
+                specialize in crafting functional, elegant digital experiences that are both user-centered and
+                performance-driven.
+              </p>
+              <p className='text-light/80 mb-4'>
+                With a background in end-to-end development, I bring ideas to life - from initial research and
+                wireframes to responsive, production-ready websites. I enjoy combining logic with creativity, making
+                sure every pixel has a purpose and every interaction feels natural.
               </p>
               <p className='text-light/80'>
-                My approach combines creative design thinking with technical expertise to build websites and
-                applications that not only look stunning but also perform exceptionally well.
+                Whether it&apos;s collaborating with a team or owning a project from start to finish, I take pride in
+                writing clean code, creating thoughtful design systems, and delivering meaningful user experiences that
+                make a real impact.
               </p>
 
               <div className='mt-6'>
                 <h4 className='font-semibold text-lg mb-2'>Education</h4>
                 <ul className='space-y-2 text-light/80'>
-                  <li>• Diploma in Web Design & Production – Yoobee Colleges</li>
-                  <li>• Certificate in UX Design – Yoobee Colleges</li>
-                  <li>• Certificate in Web Development – Yoobee Colleges</li>
-                  <li>• Certificate in Business Studies (Information Systems) – Massey University</li>
+                  <li>• Diploma in Web Design & Production - Yoobee Colleges</li>
+                  <li>• Certificate in UX Design - Yoobee Colleges</li>
+                  <li>• Certificate in Web Development - Yoobee Colleges</li>
+                  <li>• Certificate in Business Studies (Information Systems) - Massey University</li>
                 </ul>
               </div>
 
               <div className='mt-6'>
                 <h4 className='font-semibold text-lg mb-2'>Experience</h4>
                 <ul className='space-y-2 text-light/80'>
-                  <li>• UX/UI Designer & Web Developer – Chance Voight Investment Corporation (May 2024–Present)</li>
-                  <li>• Freelance Web Developer – Self‑employed (2023–Present)</li>
+                  <li>• UX/UI Designer & Web Developer - Chance Voight Investment Corporation (May 2024-Present)</li>
+                  <li>• Freelance Web Developer - Self-employed (2022-Present)</li>
                 </ul>
               </div>
             </TiltCard>

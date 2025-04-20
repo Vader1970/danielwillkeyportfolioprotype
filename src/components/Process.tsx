@@ -18,7 +18,7 @@ const Process = () => {
         </AnimatedElement>
 
         <AnimatedElement once delay={0.1}>
-          <p className='text-light/80 text-left max-w-3xl mx-auto mb-16'>
+          <p className='text-lg text-light/80 text-left max-w-3xl mx-auto mb-16'>
             I follow a comprehensive end-to-end web development process that ensures every project is built with
             purpose, precision, and passion from start to finish.
           </p>
