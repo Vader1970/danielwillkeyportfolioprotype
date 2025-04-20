@@ -15,6 +15,10 @@ const Projects = dynamic(() => import("@/components/Projects"), {
   loading: () => <p className='text-center py-10'>Loading Projects section...</p>,
 });
 
+const Contact = dynamic(() => import("@/components/Contact"), {
+  loading: () => <p className='text-center py-10'>Loading Contact section...</p>,
+});
+
 export default function Home() {
   return (
     <>
@@ -22,6 +26,7 @@ export default function Home() {
       <About />
       <Process />
       <Projects />
+      <Contact />
     </>
   );
 }

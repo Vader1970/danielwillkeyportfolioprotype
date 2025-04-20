@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { geistSans, geistMono } from "./fonts";
 import "./globals.css";
 import Navbar from "@/components/navigation/Navbar";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://danielwillkeyportfolioprotype.vercel.app/"),
@@ -54,6 +55,7 @@ export default function RootLayout({
       >
         <Navbar />
         <main className='flex-grow relative'>{children}</main>
+        <Toaster />
       </body>
     </html>
   );
