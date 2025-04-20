@@ -6,22 +6,32 @@ export const skills: SkillCategory[] = [
   {
     category: "UX/UI & Design",
     icon: FigmaIcon,
-    items: ["Figma", "Adobe Photoshop", "Responsive Design", "Accessibility"],
+    items: [
+      "User Research",
+      "User Flows",
+      "Wireframing",
+      "Prototyping",
+      "User Testing",
+      "Responsive Design",
+      "Accessibility",
+      "Interaction Design",
+    ],
   },
   {
     category: "Frontend Development",
     icon: Layout,
     items: [
       "HTML5",
-      "CSS3",
+      "CSS3 / SCSS",
       "Tailwind CSS",
       "JavaScript",
       "TypeScript",
-      "React",
+      "React.js",
       "Next.js",
       "Webflow",
       "Framer Motion",
       "GSAP",
+      "Shopify",
     ],
   },
   {
@@ -32,11 +42,15 @@ export const skills: SkillCategory[] = [
   {
     category: "Tools & Practices",
     icon: Code,
-    items: ["GitHub (Version Control)", "Postman", "SEO Optimization", "Shopify", "AI Generation Tools"],
-  },
-  {
-    category: "Soft Skills",
-    icon: Users,
-    items: ["Strong Communication", "Collaboration in Agile Teams", "Continuous Learning"],
+    items: [
+      "Figma",
+      "Adobe Photoshop",
+      "Git & GitHub",
+      "Postman",
+      "SEO Optimization",
+      "AI Generation Tools",
+      "Collaboration in Agile Teams",
+      "Continuous Learning",
+    ],
   },
 ];

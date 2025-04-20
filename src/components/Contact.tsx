@@ -72,7 +72,11 @@ const Contact = () => {
           <AnimatedElement delay={0.1} once>
             <div className='glass-morph p-6 md:p-8'>
               <h3 className='text-xl font-bold mb-6'>Contact Information</h3>
-
+              <p className='text-light/80 mb-6'>
+                If you&apos;re looking for a designer/developer who understands the full journey — from user experience
+                to final deployment — I&apos;d love to connect. Whether it&apos;s a freelance opportunity, full-time
+                role, or collaboration, feel free to reach out. I&apos;m always open to a conversation.
+              </p>
               <div className='space-y-4'>
                 <div className='flex items-start'>
                   <Mail className='w-5 h-5 mr-3 text-highlight mt-1' />
@@ -118,7 +122,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className='mt-8'>
+              <div className='mt-6'>
                 <h3 className='text-xl font-bold mb-4'>Location</h3>
                 <p className='text-light/70'>Based in Christchurch, New Zealand</p>
                 <p className='text-light/70 mt-2'>Available for remote work worldwide</p>

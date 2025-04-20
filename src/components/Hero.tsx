@@ -7,11 +7,16 @@ import Link from "next/link";
 import AnimatedText from "@/components/animation/AnimatedText";
 import { useIsMobile } from "@/hooks/use-mobile";
 
+// Define the Hero component
 export default function Hero() {
+  // Determine if the device is mobile
   const isMobile = useIsMobile();
+  // State for tracking mouse position
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  // State for tracking window size
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
+  // Effect to handle window resize and mouse movement
   useEffect(() => {
     // Set initial window size
     setWindowSize({
@@ -30,7 +35,7 @@ export default function Hero() {
       });
     };
 
-    // Only add mousemove listener on non-mobile devices
+    // Add event listeners based on device type
     let isMouseMoveListenerActive = false;
     if (!isMobile) {
       window.addEventListener("mousemove", handleMouseMove);
@@ -38,8 +43,8 @@ export default function Hero() {
     }
     window.addEventListener("resize", handleResize);
 
+    // Remove event listeners on cleanup
     return () => {
-      // Only remove if it was added
       if (isMouseMoveListenerActive) {
         window.removeEventListener("mousemove", handleMouseMove);
       }
@@ -47,8 +52,9 @@ export default function Hero() {
     };
   }, [isMobile]);
 
+  // Function to calculate movement based on mouse position
   const calculateMovement = (axis: "x" | "y", intensity = 0.02) => {
-    // Prevent calculation if mobile or window size is not yet set
+    // Return 0 if on mobile or window size is not set
     if (isMobile || windowSize.width === 0 || windowSize.height === 0) {
       return 0;
     }
@@ -61,9 +67,10 @@ export default function Hero() {
     return (position - center) * intensity;
   };
 
-  // Define static animation states for mobile
+  // Static animation properties for mobile devices
   const mobileAnimateProps = { x: 0, y: 0 };
 
+  // Render the Hero section
   return (
     <section id='home' className='relative h-screen flex items-center justify-center overflow-hidden'>
       {!isMobile && (
@@ -131,7 +138,7 @@ export default function Hero() {
             href='#about'
             className='glass-morph inline-flex items-center px-6 py-3 rounded-full text-light hover:bg-white/20 transition-all duration-300'
           >
-            View My Work
+            View My Resume
             <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 2 }} className='ml-2'>
               <ChevronDown size={16} />
             </motion.div>
@@ -144,6 +151,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
         className='absolute bottom-8 left-1/2 transform -translate-x-1/2'
+        style={{ marginBottom: isMobile ? "80px" : "0" }}
       >
         <motion.div animate={{ y: [0, 12, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
           <ChevronDown className='text-light/60' size={24} />

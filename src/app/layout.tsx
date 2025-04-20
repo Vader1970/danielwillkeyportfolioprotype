@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   robots: "index, follow",
   icons: {
-    icon: [{ url: "/favicon.ico" }],
+    icon: [{ url: "/vader.png" }],
   },
   openGraph: {
     type: "website",
