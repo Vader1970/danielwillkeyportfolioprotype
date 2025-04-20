@@ -9,8 +9,8 @@ const Footer: FC = () => {
       <div className='container-width px-4'>
         <div className='flex flex-col md:flex-row justify-between items-center'>
           <div className='mb-6 md:mb-0'>
-            <h2 className='text-2xl font-bold gradient-text'>Daniel Wilkey</h2>
-            <p className='text-white mt-2'>UX/UI Designer & Web Developer</p>
+            <h2 className='text-2xl font-bold gradient-text text-center md:text-left'>Daniel Wilkey</h2>
+            <p className='text-white mt-2 text-center md:text-left'>UX/UI Designer & Web Developer</p>
           </div>
 
           <div className='flex space-x-4'>
