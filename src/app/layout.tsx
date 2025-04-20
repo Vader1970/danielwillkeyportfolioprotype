@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navigation/Navbar";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://danielwilkey.com"),
+  metadataBase: new URL("https://danielwillkeyportfolioprotype.vercel.app/"),
   title: "Daniel Wilkey | UX/UI Designer & Web Developer",
   description:
     "Portfolio of Daniel Wilkey, UX/UI Designer & Web Developer based in Christchurch, New Zealand, specializing in end-to-end web development.",
@@ -31,12 +31,6 @@ export const metadata: Metadata = {
       "Portfolio of Daniel Wilkey, UX/UI Designer & Web Developer based in Christchurch, New Zealand, specializing in end-to-end web development.",
     siteName: "Daniel Wilkey Portfolio",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Daniel Wilkey | UX/UI Designer & Web Developer",
-    description:
-      "Portfolio of Daniel Wilkey, UX/UI Designer & Web Developer based in Christchurch, New Zealand, specializing in end-to-end web development.",
-  },
 };
 
 export const viewport: Viewport = {
@@ -55,12 +49,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <head>
-        <meta
-          name='description'
-          content='Portfolio of Daniel Wilkey, UX/UI Designer & Web Developer based in Christchurch, New Zealand, specializing in end-to-end web development.'
-        />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-dark text-light flex flex-col min-h-screen`}
       >
