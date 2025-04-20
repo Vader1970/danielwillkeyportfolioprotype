@@ -12,13 +12,13 @@ const Process = () => {
     <section id='process' className='section-padding relative overflow-hidden' ref={containerRef}>
       <div className='container-width relative z-10'>
         <AnimatedElement delay={0.1} once>
-          <h2 className='text-3xl md:text-4xl font-bold mb-6 md:mb-12'>
+          <h2 className='text-3xl md:text-4xl font-bold mb-8 md:mb-12'>
             <span className='gradient-text'>My Process</span>
           </h2>
         </AnimatedElement>
 
         <AnimatedElement once delay={0.1}>
-          <p className='text-lg text-light/80 text-left max-w-3xl mx-auto mb-16'>
+          <p className='text-lg text-light/80 text-left max-w-3xl mx-auto mb-6 sm:mb-8'>
             I follow a comprehensive end-to-end web development process that ensures every project is built with
             purpose, precision, and passion from start to finish.
           </p>

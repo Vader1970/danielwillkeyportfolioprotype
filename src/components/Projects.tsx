@@ -22,7 +22,7 @@ export default function Projects() {
     <section id='projects' className='section-padding bg-dark text-light relative overflow-hidden'>
       <div className='container-width'>
         <AnimatedElement delay={0.1} once>
-          <h2 className='text-3xl md:text-4xl font-bold mb-6 md:mb-12'>
+          <h2 className='text-3xl md:text-4xl font-bold mb-8 md:mb-12'>
             <span className='gradient-text'>Selected Projects</span>
           </h2>
         </AnimatedElement>
