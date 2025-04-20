@@ -118,9 +118,3 @@
     @apply mx-auto max-w-7xl;
   }
 }
-
-@media (max-width: 640px) {
-  .section-padding {
-    padding-top: 0;
-  }
-}
