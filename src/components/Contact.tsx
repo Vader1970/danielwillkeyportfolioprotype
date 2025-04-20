@@ -92,12 +92,12 @@ const Contact = () => {
                   <div>
                     <h4 className='font-medium'>GitHub</h4>
                     <a
-                      href='https://github.com/danielwilkey'
+                      href='https://github.com/Vader1970'
                       target='_blank'
                       rel='noopener noreferrer'
                       className='text-light/70 hover:text-highlight transition-colors duration-300'
                     >
-                      github.com/danielwilkey
+                      github.com/Vader1970
                     </a>
                   </div>
                 </div>
@@ -107,7 +107,7 @@ const Contact = () => {
                   <div>
                     <h4 className='font-medium'>LinkedIn</h4>
                     <a
-                      href='https://linkedin.com/in/danielwilkey'
+                      href='https://www.linkedin.com/in/danielwilkey/'
                       target='_blank'
                       rel='noopener noreferrer'
                       className='text-light/70 hover:text-highlight transition-colors duration-300'

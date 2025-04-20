@@ -3,6 +3,11 @@ import { geistSans, geistMono } from "./fonts";
 import "./globals.css";
 import Navbar from "@/components/navigation/Navbar";
 import { Toaster } from "@/components/ui/toaster";
+import dynamic from "next/dynamic";
+
+const Footer = dynamic(() => import("@/components/navigation/Footer"), {
+  loading: () => <p className='text-center py-10'>Loading Footer...</p>,
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://danielwillkeyportfolioprotype.vercel.app/"),
@@ -56,6 +61,7 @@ export default function RootLayout({
         <Navbar />
         <main className='flex-grow relative'>{children}</main>
         <Toaster />
+        <Footer />
       </body>
     </html>
   );
