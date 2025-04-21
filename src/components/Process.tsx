@@ -17,12 +17,12 @@ const Process = () => {
           </h2>
         </AnimatedElement>
 
-        <AnimatedElement once delay={0.1}>
+        {/* <AnimatedElement once delay={0.1}>
           <p className='text-lg text-muted-alt text-left max-w-3xl mx-auto mb-6 sm:mb-8'>
             I follow a complete web development process that brings each project to life with care, precision, and
             passion from beginning to end.
           </p>
-        </AnimatedElement>
+        </AnimatedElement> */}
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8'>
           {processSteps.map((step: ProcessStep, index: number) => (

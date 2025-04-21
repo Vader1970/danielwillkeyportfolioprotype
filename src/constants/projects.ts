@@ -29,7 +29,7 @@ export const projects: Project[] = [
       "Built Burst Digital's Webflow site from start to finish, handling research, UX/UI design, client communication, and final deployment.",
     image: "/images/burst-digital.webp",
     categories: ["ui", "frontend"],
-    tools: ["Figma", "Webflow", "Framer Motion", "CMS"],
+    tools: ["Figma", "Webflow", "UI/UX Design", "Content Management System"],
     liveUrl: "https://www.burstdigital.co.nz/",
     type: "client",
   },
