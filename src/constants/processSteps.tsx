@@ -11,28 +11,30 @@ export const processSteps: ProcessStep[] = [
   {
     icon: <FileText className='w-6 h-6' />,
     title: "Planning",
-    description: "Creating a detailed roadmap, including sitemap, technical specifications, and content strategy.",
+    description: "Next, I create a clear roadmap that covers the sitemap, technical details, and content strategy.",
   },
   {
     icon: <Palette className='w-6 h-6' />,
     title: "UX/UI Design",
     description:
-      "Crafting wireframes and high-fidelity mockups that emphasize user experience while aligning with your brand.",
+      "Then, I design wireframes and high-fidelity mock-ups that focus on great user experience while staying true to your brand.",
   },
   {
     icon: <Code className='w-6 h-6' />,
     title: "Development",
     description:
-      "Building with clean, efficient code using modern frameworks and best practices for optimal performance.",
+      "I write clean, efficient code using modern tools and best practices to ensure your site runs smoothly.",
   },
   {
     icon: <Check className='w-6 h-6' />,
     title: "Testing",
-    description: "Rigorous quality assurance across devices and browsers to ensure everything works flawlessly.",
+    description:
+      "Before launch, I thoroughly test across devices and browsers to make sure everything works perfectly.",
   },
   {
     icon: <RefreshCw className='w-6 h-6' />,
     title: "Maintenance",
-    description: "Ongoing support, updates, and monitoring to keep your site secure, fast, and relevant.",
+    description:
+      "After launch, I provide ongoing support, updates, and monitoring to keep your site secure, fast, and up to date.",
   },
 ];

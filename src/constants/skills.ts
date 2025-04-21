@@ -37,19 +37,20 @@ export const skills: SkillCategory[] = [
   {
     category: "Backend & Data",
     icon: Server,
-    items: ["Node.js", "MongoDB", "Supabase", "RESTful APIs", "CMS Integration"],
+    items: ["Node.js", "MongoDB", "Supabase", "RESTful APIs", "CMS Integration", "Strapi"],
   },
   {
     category: "Tools & Practices",
     icon: Code,
     items: [
+      "Collaboration in Agile Teams",
       "Figma",
       "Adobe Photoshop",
       "Git & GitHub",
       "Postman",
       "SEO Optimization",
       "AI Generation Tools",
-      "Collaboration in Agile Teams",
+
       "Continuous Learning",
     ],
   },

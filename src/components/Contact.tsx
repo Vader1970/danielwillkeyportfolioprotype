@@ -63,28 +63,28 @@ const Contact = () => {
     <section id='contact' className='section-padding bg-dark text-light relative overflow-hidden'>
       <div className='container-width'>
         <AnimatedElement delay={0.1} once>
-          <h2 className='text-3xl md:text-4xl font-bold mb-8 md:mb-12'>
+          <h2 className='section-heading'>
             <span className='gradient-text'>Get in Touch</span>
           </h2>
         </AnimatedElement>
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-start'>
           <AnimatedElement delay={0.1} once>
-            <div className='glass-morph p-6 md:p-8'>
+            <div className='card'>
               <h3 className='text-xl font-bold mb-6'>Contact Information</h3>
-              <p className='text-light/80 mb-6'>
-                If you&apos;re looking for a designer/developer who understands the full journey — from user experience
-                to final deployment — I&apos;d love to connect. Whether it&apos;s a freelance opportunity, full-time
-                role, or collaboration, feel free to reach out. I&apos;m always open to a conversation.
+              <p className='text-muted mb-6'>
+                If you&apos;re looking for a designer and developer who understands the entire process - from user
+                experience to final launch - I&apos;d love to hear from you. Whether it&apos;s a freelance project, a
+                full-time role, or a collaboration, feel free to get in touch. I&apos;m always happy to chat.
               </p>
               <div className='space-y-4'>
                 <div className='flex items-start'>
-                  <Mail className='w-5 h-5 mr-3 text-highlight mt-1' />
+                  <Mail className='icon-highlight mr-3 mt-1' />
                   <div>
                     <h4 className='font-medium'>Email</h4>
                     <a
                       href='mailto:daniel.wilkey@gmail.com'
-                      className='text-light/70 hover:text-highlight transition-colors duration-300'
+                      className='text-muted-alt hover:text-highlight transition-colors duration-300'
                     >
                       daniel.wilkey@gmail.com
                     </a>
@@ -92,14 +92,14 @@ const Contact = () => {
                 </div>
 
                 <div className='flex items-start'>
-                  <GithubIcon className='w-5 h-5 mr-3 text-highlight mt-1' />
+                  <GithubIcon className='icon-highlight mr-3 mt-1' />
                   <div>
                     <h4 className='font-medium'>GitHub</h4>
                     <a
                       href='https://github.com/Vader1970'
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='text-light/70 hover:text-highlight transition-colors duration-300'
+                      className='text-muted-alt hover:text-highlight transition-colors duration-300'
                     >
                       github.com/Vader1970
                     </a>
@@ -107,14 +107,14 @@ const Contact = () => {
                 </div>
 
                 <div className='flex items-start'>
-                  <LinkedinIcon className='w-5 h-5 mr-3 text-highlight mt-1' />
+                  <LinkedinIcon className='icon-highlight mr-3 mt-1' />
                   <div>
                     <h4 className='font-medium'>LinkedIn</h4>
                     <a
                       href='https://www.linkedin.com/in/danielwilkey/'
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='text-light/70 hover:text-highlight transition-colors duration-300'
+                      className='text-muted-alt hover:text-highlight transition-colors duration-300'
                     >
                       linkedin.com/in/danielwilkey
                     </a>
@@ -124,61 +124,39 @@ const Contact = () => {
 
               <div className='mt-6'>
                 <h3 className='text-xl font-bold mb-4'>Location</h3>
-                <p className='text-light/70'>Based in Christchurch, New Zealand</p>
-                <p className='text-light/70 mt-2'>Available for remote work worldwide</p>
+                <p className='text-muted-alt'>Based in Christchurch, New Zealand</p>
+                <p className='text-muted-alt mt-2'>Available for remote work worldwide</p>
               </div>
             </div>
           </AnimatedElement>
 
           <AnimatedElement delay={0.2} once>
-            <form onSubmit={handleSubmit} className='glass-morph p-6 md:p-8'>
+            <form onSubmit={handleSubmit} className='card'>
               <h3 className='text-xl font-bold mb-6'>Send a Message</h3>
 
               <div className='space-y-4'>
                 <div>
-                  <label htmlFor='name' className='block text-light/80 mb-2'>
+                  <label htmlFor='name' className='block text-muted mb-2'>
                     Name
                   </label>
-                  <input
-                    type='text'
-                    id='name'
-                    name='name'
-                    required
-                    className='w-full px-4 py-2 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-highlight/50 text-light'
-                  />
+                  <input type='text' id='name' name='name' required className='form-input' />
                 </div>
 
                 <div>
-                  <label htmlFor='email' className='block text-light/80 mb-2'>
+                  <label htmlFor='email' className='block text-muted mb-2'>
                     Email
                   </label>
-                  <input
-                    type='email'
-                    id='email'
-                    name='email'
-                    required
-                    className='w-full px-4 py-2 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-highlight/50 text-light'
-                  />
+                  <input type='email' id='email' name='email' required className='form-input' />
                 </div>
 
                 <div>
-                  <label htmlFor='message' className='block text-light/80 mb-2'>
+                  <label htmlFor='message' className='block text-muted mb-2'>
                     Message
                   </label>
-                  <textarea
-                    id='message'
-                    name='message'
-                    required
-                    rows={5}
-                    className='w-full px-4 py-2 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-highlight/50 text-light resize-none'
-                  ></textarea>
+                  <textarea id='message' name='message' required rows={5} className='form-input resize-none'></textarea>
                 </div>
 
-                <button
-                  type='submit'
-                  disabled={isSubmitting}
-                  className='flex items-center justify-center w-full px-6 py-3 bg-highlight text-white rounded-md hover:bg-highlight/80 transition-colors duration-300 disabled:opacity-50'
-                >
+                <button type='submit' disabled={isSubmitting} className='btn-primary flex-center w-full'>
                   {isSubmitting ? "Sending..." : "Send Message"}
                   <Send size={16} className='ml-2' />
                 </button>
