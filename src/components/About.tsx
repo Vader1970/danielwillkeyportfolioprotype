@@ -31,7 +31,7 @@ const About = () => {
                 code, developing user-friendly design systems, and delivering user experiences that truly matter.
               </p>
 
-              <div className='mt-6'>
+              <div className='mt-6 sm:mt-6'>
                 <h4 className='font-semibold text-lg mb-2'>Education</h4>
                 <ul className='space-y-2 text-muted'>
                   <li>• Diploma in Web Design & Production - Yoobee Colleges</li>
@@ -54,7 +54,7 @@ const About = () => {
 
           <div className='space-y-8'>
             <AnimatedElement delay={0.2} once>
-              <h3 className='text-xl md:text-2xl font-bold mb-6'>My Skills</h3>
+              <h3 className='text-xl md:text-2xl font-bold mb-6 mt-6 sm:mt-0'>My Skills</h3>
             </AnimatedElement>
 
             <div className='space-y-8'>
