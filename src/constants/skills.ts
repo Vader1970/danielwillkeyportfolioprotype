@@ -50,7 +50,6 @@ export const skills: SkillCategory[] = [
       "Postman",
       "SEO Optimization",
       "AI Generation Tools",
-
       "Continuous Learning",
     ],
   },

@@ -68,7 +68,7 @@ const Contact = () => {
           </h2>
         </AnimatedElement>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-start'>
+        <div className='grid grid-cols-1 xl:grid-cols-2 gap-6 md:gap-8 items-start'>
           <AnimatedElement delay={0.1} once>
             <div className='card'>
               <h3 className='text-xl font-bold mb-6'>Contact Information</h3>

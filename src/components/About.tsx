@@ -1,5 +1,4 @@
 import AnimatedElement from "@/components/animation/AnimatedElements";
-// import AnimatedText from "@/components/animation/AnimatedText"; // Removed import
 import TiltCard from "@/components/animation/TiltCard";
 import { skills } from "@/constants/skills";
 
@@ -13,7 +12,7 @@ const About = () => {
           </h2>
         </AnimatedElement>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-center'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-start'>
           <AnimatedElement delay={0.1} once>
             <TiltCard className='card'>
               <h3 className='text-xl md:text-2xl font-bold mb-4'>UX/UI Designer & Web Developer</h3>
@@ -47,6 +46,7 @@ const About = () => {
                 <ul className='space-y-2 text-muted'>
                   <li>• UX/UI Designer & Web Developer - Chance Voight Investment Corporation (May 2024-Present)</li>
                   <li>• Freelance Web Developer - Self-employed (2022-Present)</li>
+                  <li>• Pixel Perfect Web Designs - Web Designer & Developer (2022-2024)</li>
                 </ul>
               </div>
             </TiltCard>
@@ -57,7 +57,7 @@ const About = () => {
               <h3 className='text-xl md:text-2xl font-bold mb-6'>My Skills</h3>
             </AnimatedElement>
 
-            <div className='space-y-6'>
+            <div className='space-y-8'>
               {skills.map((skill, index) => {
                 const IconComponent = skill.icon;
                 return (
