@@ -117,4 +117,71 @@
   .container-width {
     @apply mx-auto max-w-7xl;
   }
+
+  /* Heading styles */
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold mb-8 md:mb-12;
+  }
+
+  /* Text styles */
+  .text-muted {
+    @apply text-light/80;
+  }
+
+  .text-muted-alt {
+    @apply text-light/70;
+  }
+
+  /* Card and component styles */
+  .card {
+    @apply glass-morph p-6 md:p-8 h-full;
+  }
+
+  .card-sm {
+    @apply glass-morph p-4 md:p-6;
+  }
+
+  .card-interactive {
+    @apply glass-morph p-6 h-full card-hover transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-500/20 hover:via-purple-500/20 hover:to-pink-500/20 hover:backdrop-blur-lg;
+  }
+
+  /* Form element styles */
+  .form-input {
+    @apply w-full px-4 py-2 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-highlight/50 text-light;
+  }
+
+  .btn {
+    @apply px-6 py-3 rounded-md transition-colors duration-300;
+  }
+
+  .btn-primary {
+    @apply btn bg-highlight text-white hover:bg-highlight/80;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white/10 text-white hover:bg-white/20;
+  }
+
+  /* Flex layouts */
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+
+  /* Icon styles */
+  .icon {
+    @apply w-5 h-5;
+  }
+
+  .icon-highlight {
+    @apply icon text-highlight;
+  }
+
+  /* Tag/pill styles */
+  .tag {
+    @apply inline-block px-3 py-1 bg-white/10 rounded-full text-sm;
+  }
 }

@@ -22,7 +22,7 @@ export default function Projects() {
     <section id='projects' className='section-padding bg-dark text-light relative overflow-hidden'>
       <div className='container-width'>
         <AnimatedElement delay={0.1} once>
-          <h2 className='text-3xl md:text-4xl font-bold mb-8 md:mb-12'>
+          <h2 className='section-heading'>
             <span className='gradient-text'>Selected Projects</span>
           </h2>
         </AnimatedElement>
@@ -62,15 +62,15 @@ export default function Projects() {
                   </div>
                   <div className='p-6 flex flex-col flex-grow'>
                     <h3 className='text-xl font-bold mb-2'>{project.title}</h3>
-                    <p className='text-light/70 mb-4 flex-grow'>{project.description}</p>
+                    <p className='text-muted-alt mb-4 flex-grow'>{project.description}</p>
                     <div className='flex flex-wrap gap-2 mb-6'>
                       {project.tools.map((tool) => (
-                        <span key={tool} className='text-xs px-2 py-1 bg-white/10 rounded-full'>
+                        <span key={tool} className='tag'>
                           {tool}
                         </span>
                       ))}
                     </div>
-                    <div className='flex justify-between items-center mt-auto'>
+                    <div className='flex-between mt-auto'>
                       {project.githubUrl && (
                         <a
                           href={project.githubUrl}
