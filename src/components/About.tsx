@@ -1,3 +1,4 @@
+//About Section
 import AnimatedElement from "@/components/animation/AnimatedElements";
 import TiltCard from "@/components/animation/TiltCard";
 import { skills } from "@/constants/skills";
