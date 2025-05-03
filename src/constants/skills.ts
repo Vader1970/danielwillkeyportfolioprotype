@@ -12,8 +12,9 @@ export const skills: SkillCategory[] = [
       "Wireframing",
       "Prototyping",
       "User Testing",
-      "Responsive Design",
       "Accessibility",
+      "Responsive Design",
+
       "Interaction Design",
     ],
   },
@@ -43,11 +44,14 @@ export const skills: SkillCategory[] = [
     category: "Tools & Practices",
     icon: Code,
     items: [
-      "Collaboration in Agile Teams",
+      "Collaboration",
+      "Agile Teams",
       "Figma",
       "Adobe Photoshop",
+
       "Git & GitHub",
       "Postman",
+
       "SEO Optimization",
       "AI Generation Tools",
       "Continuous Learning",
