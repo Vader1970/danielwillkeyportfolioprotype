@@ -139,21 +139,28 @@ const Contact = () => {
                   <label htmlFor='name' className='block text-muted mb-2'>
                     Name
                   </label>
-                  <input type='text' id='name' name='name' required className='form-input' />
+                  <input type='text' id='name' name='name' required className='form-input' autoComplete='name' />
                 </div>
 
                 <div>
                   <label htmlFor='email' className='block text-muted mb-2'>
                     Email
                   </label>
-                  <input type='email' id='email' name='email' required className='form-input' />
+                  <input type='email' id='email' name='email' required className='form-input' autoComplete='email' />
                 </div>
 
                 <div>
                   <label htmlFor='message' className='block text-muted mb-2'>
                     Message
                   </label>
-                  <textarea id='message' name='message' required rows={5} className='form-input resize-none'></textarea>
+                  <textarea
+                    id='message'
+                    name='message'
+                    required
+                    rows={5}
+                    className='form-input resize-none'
+                    autoComplete='off'
+                  ></textarea>
                 </div>
 
                 <button type='submit' disabled={isSubmitting} className='btn-primary flex-center w-full'>
