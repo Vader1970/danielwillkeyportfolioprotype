@@ -32,7 +32,6 @@ export const skills: SkillCategory[] = [
       "Webflow",
       "Framer Motion",
       "GSAP",
-      "Shopify",
     ],
   },
   {
