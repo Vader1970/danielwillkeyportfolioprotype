@@ -4,7 +4,7 @@ import { SkillCategory } from "@/types/skills";
 
 export const skills: SkillCategory[] = [
   {
-    category: "UX/UI & Design",
+    category: "UX/UI Design",
     icon: FigmaIcon,
     items: [
       "User Research",
@@ -32,6 +32,7 @@ export const skills: SkillCategory[] = [
       "Webflow",
       "Framer Motion",
       "GSAP",
+      "Shadcn UI",
     ],
   },
   {
@@ -47,13 +48,11 @@ export const skills: SkillCategory[] = [
       "Agile Teams",
       "Figma",
       "Adobe Photoshop",
-
       "Git & GitHub",
       "Postman",
-
+      "Vercel",
       "SEO Optimization",
       "AI Generation Tools",
-      "Continuous Learning",
     ],
   },
 ];
