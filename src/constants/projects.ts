@@ -49,7 +49,7 @@ export const projects: Project[] = [
       "TypeScript",
       "Tailwind CSS",
       "Framer Motion",
-      "Aynalytics",
+      "Analytics",
       "Node JS",
       "API's",
       "Supabase",
