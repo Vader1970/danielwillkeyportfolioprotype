@@ -38,7 +38,7 @@ export const skills: SkillCategory[] = [
   {
     category: "Backend & Data",
     icon: Server,
-    items: ["Node.js", "MongoDB", "Supabase", "RESTful APIs", "CMS Integration", "Strapi"],
+    items: ["Node.js", "MongoDB", "Supabase", "APIs", "CMS Integration", "Strapi", "Express", "E-commerce", "Version Control", "Database Administration"],
   },
   {
     category: "Tools & Practices",
