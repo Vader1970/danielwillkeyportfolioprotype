@@ -62,7 +62,10 @@ export default function Projects() {
                   </div>
                   <div className='p-6 flex flex-col flex-grow'>
                     <h3 className='text-xl font-bold mb-2'>{project.title}</h3>
-                    <p className='text-muted-alt mb-4 flex-grow'>{project.description}</p>
+                    <p
+                      className='text-muted-alt mb-4 flex-grow'
+                      dangerouslySetInnerHTML={{ __html: project.description }}
+                    />
                     <div className='flex flex-wrap gap-2 mb-6'>
                       {project.tools.map((tool) => (
                         <span key={tool} className='tag'>
@@ -86,9 +89,8 @@ export default function Projects() {
                         href={project.liveUrl}
                         target='_blank'
                         rel='noopener noreferrer'
-                        className={`flex items-center text-highlight hover:text-highlight/80 transition-colors duration-300 ${
-                          !project.githubUrl ? "ml-auto" : ""
-                        }`}
+                        className={`flex items-center text-highlight hover:text-highlight/80 transition-colors duration-300 ${!project.githubUrl ? "ml-auto" : ""
+                          }`}
                       >
                         View Project
                         <ExternalLink size={16} className='ml-1' />
