@@ -1,6 +1,7 @@
 import { Project } from "@/types/projects";
 
 export const projects: Project[] = [
+
   {
     title: "Splyt (Awwwards Recreation)",
     description:
@@ -21,6 +22,17 @@ export const projects: Project[] = [
     tools: ["Figma", "React JS", "Tailwind CSS", "GSAP"],
     githubUrl: "https://github.com/Vader1970/gsap_cocktails",
     liveUrl: "https://dans-gsap-cocktails.vercel.app",
+    type: "personal",
+  },
+  {
+    title: "Apple iPhone 15 Clone",
+    description:
+      "A detailed recreation of the Apple iPhone 15 Pro website, combining GSAP animations with Three.js 3D effects for a dynamic user experience.",
+    image: "/images/iphone.webp",
+    categories: ["ui", "frontend", "backend"],
+    tools: ["Figma", "Photoshop", "React JS", "Three JS", "GSAP", "Tailwind CSS", "JavaScript", "Netlify"],
+    githubUrl: "https://github.com/Vader1970/dans-iphone-15pro-clone",
+    liveUrl: "https://dans-iphone-pro15-clone.netlify.app/",
     type: "personal",
   },
   {
@@ -45,15 +57,16 @@ export const projects: Project[] = [
     liveUrl: "https://your-ai-resume-analyzer.vercel.app/",
     type: "personal",
   },
+
   {
-    title: "Apple iPhone 15 Clone",
+    title: "Tech Trader",
     description:
-      "A detailed recreation of the Apple iPhone 15 Pro website, combining GSAP animations with Three.js 3D effects for a dynamic user experience.",
-    image: "/images/iphone.webp",
+      "A full-stack MERN e-commerce platform with product management, authentication, cart, PayPal checkout, and an admin dashboard. Legacy demo: image upload disabled.<br />Admin Login:<br />admin@gmail.com, password: admin.<br />PayPal Sandbox:<br />sb-bsm47x25038513@personal.example.com,<br />password: gu1P_bKC",
+    image: "/images/tech-trader.webp",
     categories: ["ui", "frontend", "backend"],
-    tools: ["Figma", "Photoshop", "React JS", "Three JS", "GSAP", "Tailwind CSS", "JavaScript", "Netlify"],
-    githubUrl: "https://github.com/Vader1970/dans-iphone-15pro-clone",
-    liveUrl: "https://dans-iphone-pro15-clone.netlify.app/",
+    tools: ["Figma", "React JS", "Redux", "MERN", "Chakra UI", "Node.js", "Express", "MongoDB"],
+    githubUrl: "https://github.com/Vader1970/techtrader",
+    liveUrl: "https://techtrader.vercel.app/",
     type: "personal",
   },
   {
@@ -66,17 +79,27 @@ export const projects: Project[] = [
     liveUrl: "https://award-winning-website-dans.vercel.app/",
     type: "personal",
   },
-  // {
-  //   title: "Brainwave",
-  //   description:
-  //     "A modern landing page featuring sleek parallax effects and a clean bento box layout designed to engage visitors visually.",
-  //   image: "/images/brainwave.webp",
-  //   categories: ["ui", "frontend"],
-  //   tools: ["Figma", "Photoshop", "React JS", "GSAP", "Tailwind CSS", "JavaScript", "Vercel"],
-  //   githubUrl: "https://github.com/Vader1970/dans-brainwaze/tree/main",
-  //   liveUrl: "https://dans-brainwaze.vercel.app/",
-  //   type: "personal",
-  // },
+  {
+    title: "Brainwave",
+    description:
+      "A modern landing page featuring sleek parallax effects and a clean bento box layout designed to engage visitors visually.",
+    image: "/images/brainwave.webp",
+    categories: ["ui", "frontend"],
+    tools: ["Figma", "Photoshop", "React JS", "GSAP", "Tailwind CSS", "JavaScript", "Vercel"],
+    githubUrl: "https://github.com/Vader1970/dans-brainwaze/tree/main",
+    liveUrl: "https://dans-brainwaze.vercel.app/",
+    type: "personal",
+  },
+  {
+    title: "Burst Digital",
+    description:
+      "Built Burst Digital's Webflow site from start to finish, handling research, UX/UI design, client communication, and final deployment.",
+    image: "/images/burst-digital.webp",
+    categories: ["ui", "frontend"],
+    tools: ["Figma", "Webflow", "UX/UI Design", "Content Management System"],
+    liveUrl: "https://www.burstdigital.co.nz/",
+    type: "client",
+  },
   {
     title: "CVI Projects Limited",
     description:
@@ -156,14 +179,5 @@ export const projects: Project[] = [
     liveUrl: "https://patterson-wealth-partners.vercel.app/",
     type: "client",
   },
-  // {
-  //   title: "Burst Digital",
-  //   description:
-  //     "Built Burst Digital's Webflow site from start to finish, handling research, UX/UI design, client communication, and final deployment.",
-  //   image: "/images/burst-digital.webp",
-  //   categories: ["ui", "frontend"],
-  //   tools: ["Figma", "Webflow", "UX/UI Design", "Content Management System"],
-  //   liveUrl: "https://www.burstdigital.co.nz/",
-  //   type: "client",
-  // },
+
 ];
