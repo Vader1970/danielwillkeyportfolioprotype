@@ -5,7 +5,7 @@ export const projects: Project[] = [
   {
     title: "Splyt (Awwwards Recreation)",
     description:
-      "A creative website recreation inspired by Splyt on Awwwards. Developed with React, GSAP, and Tailwind CSS, showcasing fluid motion design and interactive storytelling..",
+      "A creative website recreation inspired by Splyt on Awwwards. Developed with React, GSAP, and Tailwind CSS, showcasing fluid motion design and interactive storytelling.",
     image: "/images/dans-attempt-spylt.webp",
     categories: ["ui", "frontend"],
     tools: ["Figma", "React JS", "Tailwind CSS", "GSAP"],
@@ -93,7 +93,7 @@ export const projects: Project[] = [
   {
     title: "Burst Digital",
     description:
-      "Built Burst Digital's Webflow site from start to finish, handling research, UX/UI design, client communication, and final deployment.",
+      "Developed Burst Digital's Webflow site from start to finish, handling research, UX/UI design, client communication, and final deployment.",
     image: "/images/burst-digital.webp",
     categories: ["ui", "frontend"],
     tools: ["Figma", "Webflow", "UX/UI Design", "Content Management System"],
