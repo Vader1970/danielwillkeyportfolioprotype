@@ -57,18 +57,28 @@ export const projects: Project[] = [
     liveUrl: "https://your-ai-resume-analyzer.vercel.app/",
     type: "personal",
   },
-
   {
-    title: "Tech Trader",
+    title: "Master Kerb & Concrete",
     description:
-      "A full-stack MERN e-commerce platform with product management, authentication, cart, PayPal checkout, and an admin dashboard. Legacy demo: image upload disabled.<br />Admin Login:<br />admin@gmail.com, password: admin.<br />PayPal Sandbox:<br />sb-bsm47x25038513@personal.example.com,<br />password: gu1P_bKC",
-    image: "/images/tech-trader.webp",
-    categories: ["ui", "frontend", "backend"],
-    tools: ["Figma", "React JS", "Redux", "MERN", "Chakra UI", "Node.js", "Express", "MongoDB"],
-    githubUrl: "https://github.com/Vader1970/techtrader",
-    liveUrl: "https://techtrader.vercel.app/",
-    type: "personal",
+      "A custom, conversion-focused landing page built with Framer! Designed to highlight key messaging, guide user flow, and drive actions for a custom concrete and kerb supplier.",
+    image: "/images/master-concrete.webp",
+    categories: ["ui", "frontend"],
+    tools: ["Figma", "Photoshop", "Framer", "UX/UI Design"],
+    liveUrl: "https://www.masterkerb.co.nz/landing-page",
+    type: "client",
   },
+
+  // {
+  //   title: "Tech Trader",
+  //   description:
+  //     "A full-stack MERN e-commerce platform with product management, authentication, cart, PayPal checkout, and an admin dashboard. Legacy demo: image upload disabled.<br />Admin Login:<br />admin@gmail.com, password: admin.<br />PayPal Sandbox:<br />sb-bsm47x25038513@personal.example.com,<br />password: gu1P_bKC",
+  //   image: "/images/tech-trader.webp",
+  //   categories: ["ui", "frontend", "backend"],
+  //   tools: ["Figma", "React JS", "Redux", "MERN", "Chakra UI", "Node.js", "Express", "MongoDB"],
+  //   githubUrl: "https://github.com/Vader1970/techtrader",
+  //   liveUrl: "https://techtrader.vercel.app/",
+  //   type: "personal",
+  // },
   {
     title: "Zentry Award Winnning Website Clone",
     description: "My clone of the award-winning Zentry website, which earned Awwwards Site of the Month recognition.",
