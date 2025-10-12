@@ -1,26 +1,126 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import AnimatedElement from "@/components/animation/AnimatedElements";
 import { Mail, Send } from "lucide-react";
 import LinkedinIcon from "@/components/icons/LinkedinIcon";
 import GithubIcon from "@/components/icons/GithubIcon";
 import { useToast } from "@/hooks/use-toast";
 
+// Google reCAPTCHA site key (safe to expose on client)
+const RECAPTCHA_SITE_KEY = "6Lc6-uYrAAAAAJd0FcYVIBxnsvlYhcMAuq9mTmHv";
+
+// Extend Window interface for reCAPTCHA
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (callback: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+      render: (container: string | HTMLElement, parameters: {
+        sitekey: string;
+        callback?: (token: string) => void;
+        "expired-callback"?: () => void;
+        "error-callback"?: () => void;
+        theme?: "light" | "dark";
+        size?: "normal" | "compact";
+      }) => number;
+      reset: (widgetId?: number) => void;
+    };
+  }
+}
+
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<HTMLDivElement>(null);
+  const recaptchaWidgetId = useRef<number | null>(null);
+
+  // Load reCAPTCHA script
+  useEffect(() => {
+    // Check if script already exists
+    if (document.getElementById("recaptcha-script")) {
+      if (window.grecaptcha) {
+        setRecaptchaLoaded(true);
+      }
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js?render=explicit";
+    script.id = "recaptcha-script";
+    script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      setRecaptchaLoaded(true);
+    };
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup on unmount
+      const existingScript = document.getElementById("recaptcha-script");
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
+
+  // Initialize reCAPTCHA widget
+  useEffect(() => {
+    if (recaptchaLoaded && recaptchaRef.current && window.grecaptcha && recaptchaWidgetId.current === null) {
+      try {
+        window.grecaptcha.ready(() => {
+          if (recaptchaRef.current) {
+            recaptchaWidgetId.current = window.grecaptcha.render(recaptchaRef.current, {
+              sitekey: RECAPTCHA_SITE_KEY,
+              callback: (token: string) => {
+                setRecaptchaToken(token);
+              },
+              "expired-callback": () => {
+                setRecaptchaToken(null);
+              },
+              "error-callback": () => {
+                setRecaptchaToken(null);
+                toast({
+                  title: "Error",
+                  description: "reCAPTCHA error. Please try again.",
+                  variant: "destructive",
+                });
+              },
+              theme: "dark",
+              size: "normal",
+            });
+          }
+        });
+      } catch (error) {
+        console.error("Error initializing reCAPTCHA:", error);
+      }
+    }
+  }, [recaptchaLoaded, toast]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
+      // Validate reCAPTCHA
+      if (!recaptchaToken) {
+        toast({
+          title: "Verification Required",
+          description: "Please complete the reCAPTCHA verification.",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
       const formData = new FormData(e.currentTarget);
       const jsonData = {
         name: formData.get("name"),
         email: formData.get("email"),
         message: formData.get("message"),
+        recaptchaToken: recaptchaToken,
       };
 
       const response = await fetch("/api/contact", {
@@ -36,6 +136,12 @@ const Contact = () => {
       if (response.ok) {
         // Reset the form
         (e.target as HTMLFormElement).reset();
+
+        // Reset reCAPTCHA
+        if (window.grecaptcha && recaptchaWidgetId.current !== null) {
+          window.grecaptcha.reset(recaptchaWidgetId.current);
+        }
+        setRecaptchaToken(null);
 
         // Show success toast
         toast({
@@ -54,6 +160,12 @@ const Contact = () => {
         description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
         variant: "destructive",
       });
+
+      // Reset reCAPTCHA on error
+      if (window.grecaptcha && recaptchaWidgetId.current !== null) {
+        window.grecaptcha.reset(recaptchaWidgetId.current);
+      }
+      setRecaptchaToken(null);
     } finally {
       setIsSubmitting(false);
     }
@@ -72,10 +184,11 @@ const Contact = () => {
           <AnimatedElement delay={0.1} once>
             <div className='card'>
               <h3 className='text-xl font-bold mb-6'>Contact Information</h3>
+              <p className='text-muted mb-1'>
+                If you&apos;re looking for a designer and developer who understands the entire process - from early user research and wireframes to polished, responsive builds and successful launches - I&apos;d love to hear from you. Whether you&apos;re after a freelance designer or developer for a short project, seeking ongoing website updates, or exploring a full-time creative partnership, I&apos;m always open to new opportunities.
+              </p>
               <p className='text-muted mb-6'>
-                If you&apos;re looking for a designer and developer who understands the entire process - from user
-                experience to final launch - I&apos;d love to hear from you. Whether it&apos;s a freelance project, a
-                full-time role, or a collaboration, feel free to get in touch. I&apos;m always happy to chat.
+                Let&apos;s connect and see how I can help turn your ideas into something people will love to use.
               </p>
               <div className='space-y-4'>
                 <div className='flex items-start'>
@@ -123,7 +236,7 @@ const Contact = () => {
               </div>
 
               <div className='mt-6'>
-                <h3 className='text-xl font-bold mb-4'>Location</h3>
+                <h3 className='text-xl font-bold mb-2'>Location</h3>
                 <p className='text-muted-alt'>Based in Christchurch, New Zealand</p>
                 <p className='text-muted-alt mt-2'>Available for remote work worldwide</p>
               </div>
@@ -163,7 +276,31 @@ const Contact = () => {
                   ></textarea>
                 </div>
 
-                <button type='submit' disabled={isSubmitting} className='btn-primary flex-center w-full'>
+                {/* reCAPTCHA v2 Checkbox */}
+                <div className='flex flex-col items-start'>
+                  <label htmlFor='recaptcha-container' className='sr-only'>
+                    Complete reCAPTCHA verification
+                  </label>
+                  <div
+                    id='recaptcha-container'
+                    ref={recaptchaRef}
+                    className='transform scale-100 origin-left'
+                    role='presentation'
+                    aria-label='reCAPTCHA verification'
+                  />
+                  {!recaptchaLoaded && (
+                    <p className='text-sm text-muted mt-2' aria-live='polite'>
+                      Loading verification...
+                    </p>
+                  )}
+                </div>
+
+                <button
+                  type='submit'
+                  disabled={isSubmitting || !recaptchaToken}
+                  className='btn-primary flex-center w-full disabled:opacity-50 disabled:cursor-not-allowed'
+                  aria-disabled={isSubmitting || !recaptchaToken}
+                >
                   {isSubmitting ? "Sending..." : "Send Message"}
                   <Send size={16} className='ml-2' />
                 </button>

@@ -3,19 +3,78 @@ import { Resend } from "resend";
 
 export const runtime = "edge";
 
+/**
+ * Verify reCAPTCHA token with Google's API
+ */
+async function verifyRecaptcha(token: string, secretKey: string): Promise<{ success: boolean; error?: string }> {
+  try {
+    const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: `secret=${secretKey}&response=${token}`,
+    });
+
+    const data = await response.json();
+
+    if (!data.success) {
+      console.error("reCAPTCHA verification failed:", data["error-codes"]);
+      return {
+        success: false,
+        error: data["error-codes"]?.[0] || "Verification failed",
+      };
+    }
+
+    return { success: true };
+  } catch (error) {
+    console.error("reCAPTCHA verification error:", error);
+    return {
+      success: false,
+      error: "Failed to verify reCAPTCHA",
+    };
+  }
+}
+
 export async function POST(req: Request) {
   const RESEND_API_KEY = process.env.RESEND_API_KEY;
+  const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
 
   if (!RESEND_API_KEY) {
     console.error("Missing RESEND_API_KEY");
     return NextResponse.json({ message: "Server error: Missing API key" }, { status: 500 });
   }
 
+  if (!RECAPTCHA_SECRET_KEY) {
+    console.error("Missing RECAPTCHA_SECRET_KEY");
+    return NextResponse.json({ message: "Server error: Missing reCAPTCHA key" }, { status: 500 });
+  }
+
   const resend = new Resend(RESEND_API_KEY);
 
   try {
     const data = await req.json();
-    const { name, email, message } = data;
+    const { name, email, message, recaptchaToken } = data;
+
+    // Validate required fields
+    if (!name || !email || !message) {
+      return NextResponse.json({ message: "Missing required fields" }, { status: 400 });
+    }
+
+    // Validate reCAPTCHA token
+    if (!recaptchaToken) {
+      return NextResponse.json({ message: "reCAPTCHA verification required" }, { status: 400 });
+    }
+
+    // Verify reCAPTCHA token with Google
+    const recaptchaResult = await verifyRecaptcha(recaptchaToken, RECAPTCHA_SECRET_KEY);
+
+    if (!recaptchaResult.success) {
+      return NextResponse.json(
+        { message: "reCAPTCHA verification failed. Please try again." },
+        { status: 400 }
+      );
+    }
 
     // Send email to me
     await resend.emails.send({
