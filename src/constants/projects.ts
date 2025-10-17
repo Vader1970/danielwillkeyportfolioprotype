@@ -100,14 +100,15 @@ export const projects: Project[] = [
     liveUrl: "https://dans-brainwaze.vercel.app/",
     type: "personal",
   },
+  // 
   {
-    title: "Burst Digital",
+    title: "Gee Wiz",
     description:
-      "Developed Burst Digital's Webflow site from start to finish, handling research, UX/UI design, client communication, and final deployment.",
-    image: "/images/burst-digital.webp",
+      "Contracted by Burst Digital, I designed and built this high-converting landing page in Figma and Wix to attract pub owners and drive quiz night bookings. The design focuses on clear hierarchy, engaging copy, and conversion-driven CTAs - turning quiet midweek nights into packed tables for venues across New Zealand.",
+    image: "/images/gee-quiz.webp",
     categories: ["ui", "frontend"],
-    tools: ["Figma", "Webflow", "UX/UI Design", "Content Management System"],
-    liveUrl: "https://www.burstdigital.co.nz/",
+    tools: ["Figma", "Photoshop", "Wix", "UX/UI Design"],
+    liveUrl: "https://danielwilkey.wixsite.com/gee-quiz",
     type: "client",
   },
   {
