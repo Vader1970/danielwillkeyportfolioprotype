@@ -1,6 +1,22 @@
 import { Project } from "@/types/projects";
 
 export const projects: Project[] = [
+  {
+    title: "Burst Digital Landing Page",
+    description:
+      "Contracted by Burst Digital to design and build a high-converting landing page aimed at increasing lead generation. Using Figma for wireframing and visual design, and Webflow for development, I crafted a clean, conversion-focused layout with engaging visuals and clear user flow.",
+    image: "/images/burst-digital-landing.webp",
+    categories: ["ui", "frontend"],
+    tools: [
+      "UX/UI Design",
+      "Figma",
+      "Photoshop",
+      "Webflow",
+      "SEO",
+    ],
+    liveUrl: "https://burst-digital-final-3d3a73.webflow.io/",
+    type: "client",
+  },
 
   {
     title: "Splyt (Awwwards Recreation)",
@@ -104,37 +120,38 @@ export const projects: Project[] = [
   {
     title: "Gee Wiz",
     description:
-      "Contracted by Burst Digital, I designed and built this high-converting landing page in Figma and Wix to attract pub owners and drive quiz night bookings. The design focuses on clear hierarchy, engaging copy, and conversion-driven CTAs - turning quiet midweek nights into packed tables for venues across New Zealand.",
+      "Contracted by Burst Digital, I designed and built this high-converting landing page to attract pub owners and drive quiz night bookings. The design focuses on clear hierarchy, engaging copy, and conversion-driven CTAs - turning quiet midweek nights into packed tables for venues across New Zealand.",
     image: "/images/gee-quiz.webp",
     categories: ["ui", "frontend"],
-    tools: ["Figma", "Photoshop", "Wix", "UX/UI Design"],
+    tools: ["UX/UI Design", "Figma", "Photoshop", "Wix"],
     liveUrl: "https://danielwilkey.wixsite.com/gee-quiz",
     type: "client",
   },
-  {
-    title: "CVI Projects Limited",
-    description:
-      "Built a responsive landing page for CVI Projects Limited to attract trade professionals, highlighting their role in managing major residential and commercial developments.",
-    image: "/images/cvi-projects.webp",
-    categories: ["ui", "frontend"],
-    tools: [
-      "Figma",
-      "UX/UI Design",
-      "Photoshop",
-      "Next JS",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "SEO",
-      "Supabase",
-      "Resend",
-      "Shadcn UI",
-      "Vercel",
-      "Monday CRM"
-    ],
-    liveUrl: "https://www.cviprojects.com/",
-    type: "client",
-  },
+  // {
+  //   title: "CVI Projects Limited",
+  //   description:
+  //     "Built a responsive landing page for CVI Projects Limited to attract trade professionals, highlighting their role in managing major residential and commercial developments.",
+  //   image: "/images/cvi-projects.webp",
+  //   categories: ["ui", "frontend"],
+  //   tools: [
+  //     "Figma",
+  //     "UX/UI Design",
+  //     "Photoshop",
+  //     "Next JS",
+  //     "TypeScript",
+  //     "Tailwind CSS",
+  //     "Framer Motion",
+  //     "SEO",
+  //     "Supabase",
+  //     "Resend",
+  //     "Shadcn UI",
+  //     "Vercel",
+  //     "Monday CRM"
+  //   ],
+  //   liveUrl: "https://www.cviprojects.com/",
+  //   type: "client",
+  // },
+
   // {
   //   title: "Next JS and React JS Component Library",
   //   description:
