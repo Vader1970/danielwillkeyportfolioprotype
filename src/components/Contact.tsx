@@ -310,9 +310,8 @@ const Contact = () => {
                     id="recaptcha-container"
                     ref={recaptchaRef}
                     className="transform scale-100 origin-left"
-                    role="presentation"
-                    aria-label="reCAPTCHA verification"
                   />
+
                   {!recaptchaLoaded && shouldLoadRecaptcha && (
                     <p className="text-sm text-muted mt-2" aria-live="polite">
                       Loading verification...
