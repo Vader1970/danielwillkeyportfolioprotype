@@ -1,22 +1,22 @@
 import { Project } from "@/types/projects";
 
 export const projects: Project[] = [
-  {
-    title: "Burst Digital Landing Page",
-    description:
-      "Contracted by Burst Digital to design and build a high-converting landing page aimed at increasing lead generation. Using Figma for wireframing and visual design, and Webflow for development, I crafted a clean, conversion-focused layout with engaging visuals and clear user flow.",
-    image: "/images/burst-digital-landing.webp",
-    categories: ["ui", "frontend"],
-    tools: [
-      "UX/UI Design",
-      "Figma",
-      "Photoshop",
-      "Webflow",
-      "SEO",
-    ],
-    liveUrl: "https://burst-digital-final-3d3a73.webflow.io/",
-    type: "client",
-  },
+  // {
+  //   title: "Burst Digital Landing Page",
+  //   description:
+  //     "Contracted by Burst Digital to design and build a high-converting landing page aimed at increasing lead generation. Using Figma for wireframing and visual design, and Webflow for development, I crafted a clean, conversion-focused layout with engaging visuals and clear user flow.",
+  //   image: "/images/burst-digital-landing.webp",
+  //   categories: ["ui", "frontend"],
+  //   tools: [
+  //     "UX/UI Design",
+  //     "Figma",
+  //     "Photoshop",
+  //     "Webflow",
+  //     "SEO",
+  //   ],
+  //   liveUrl: "https://burst-digital-final-3d3a73.webflow.io/",
+  //   type: "client",
+  // },
 
   {
     title: "Splyt (Awwwards Recreation)",
@@ -207,5 +207,14 @@ export const projects: Project[] = [
     liveUrl: "https://patterson-wealth-partners.vercel.app/",
     type: "client",
   },
-
+  {
+    title: "Burst Digital",
+    description:
+      "Built Burst Digital's Webflow site from start to finish, handling research, UX/UI design, client communication, and final deployment.",
+    image: "/images/burst-digital.webp",
+    categories: ["ui", "frontend"],
+    tools: ["Figma", "Webflow", "UX/UI Design", "Content Management System"],
+    liveUrl: "https://www.burstdigital.co.nz/",
+    type: "client",
+  },
 ];
