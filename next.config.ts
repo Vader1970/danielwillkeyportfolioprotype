@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   compress: true,
 
+  // Allow cross-origin requests in development
+  allowedDevOrigins: ["127.0.0.1", "localhost"],
+
   // Optimize images
   images: {
     formats: ["image/avif", "image/webp"],
