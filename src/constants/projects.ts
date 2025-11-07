@@ -1,6 +1,16 @@
 import { Project } from "@/types/projects";
 
 export const projects: Project[] = [
+  {
+    title: "INNLIST Holiday Homes",
+    description:
+      "Designed in Figma and hand-coded within Rocketspark using HTML5, CSS3 and JavaScript to overcome platform limitations. The result is a fast, conversion-focused landing page that the client now wants to add to their main website.",
+    image: "/images/innlist-landing.webp",
+    categories: ["ui", "frontend"],
+    tools: ["Figma", "HTML5", "CSS3", "JavaScript", "Rocketspark"],
+    liveUrl: "https://www.innlist.co.nz/landing-page/",
+    type: "client"
+  },
   // {
   //   title: "Burst Digital Landing Page",
   //   description:
@@ -124,45 +134,45 @@ export const projects: Project[] = [
     image: "/images/gee-quiz.webp",
     categories: ["ui", "frontend"],
     tools: ["UX/UI Design", "Figma", "Photoshop", "Wix"],
-    liveUrl: "https://danielwilkey.wixsite.com/gee-quiz",
+    liveUrl: "https://www.geequiz.co.nz/landing-page",
     type: "client",
   },
-  // {
-  //   title: "CVI Projects Limited",
-  //   description:
-  //     "Built a responsive landing page for CVI Projects Limited to attract trade professionals, highlighting their role in managing major residential and commercial developments.",
-  //   image: "/images/cvi-projects.webp",
-  //   categories: ["ui", "frontend"],
-  //   tools: [
-  //     "Figma",
-  //     "UX/UI Design",
-  //     "Photoshop",
-  //     "Next JS",
-  //     "TypeScript",
-  //     "Tailwind CSS",
-  //     "Framer Motion",
-  //     "SEO",
-  //     "Supabase",
-  //     "Resend",
-  //     "Shadcn UI",
-  //     "Vercel",
-  //     "Monday CRM"
-  //   ],
-  //   liveUrl: "https://www.cviprojects.com/",
-  //   type: "client",
-  // },
+  {
+    title: "CVI Projects Limited",
+    description:
+      "Built a responsive landing page for CVI Projects Limited to attract trade professionals, highlighting their role in managing major residential and commercial developments.",
+    image: "/images/cvi-projects.webp",
+    categories: ["ui", "frontend"],
+    tools: [
+      "Figma",
+      "UX/UI Design",
+      "Photoshop",
+      "Next JS",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "SEO",
+      "Supabase",
+      "Resend",
+      "Shadcn UI",
+      "Vercel",
+      "Monday CRM"
+    ],
+    liveUrl: "https://www.cviprojects.com/",
+    type: "client",
+  },
 
-  // {
-  //   title: "Next JS and React JS Component Library",
-  //   description:
-  //     "A comprehensive library of 1,307 copy-and-paste React and Next.js components, paired with matching Figma assets for rapid app development.",
-  //   image: "/images/components-library.webp",
-  //   categories: ["frontend", "backend"],
-  //   tools: ["UX/UI Design", "Figma", "Next JS", "React JS", "Tailwind CSS", "TypeScript", "Framer Motion", "Vercel"],
-  //   // githubUrl: "https://github.com/Vader1970/components-library/tree/main",
-  //   liveUrl: "https://nextjs-components-library.vercel.app/",
-  //   type: "client",
-  // },
+  {
+    title: "Next JS and React JS Component Library",
+    description:
+      "A comprehensive library of 1,307 copy-and-paste React and Next.js components, paired with matching Figma assets for rapid app development.",
+    image: "/images/components-library.webp",
+    categories: ["frontend", "backend"],
+    tools: ["UX/UI Design", "Figma", "Next JS", "React JS", "Tailwind CSS", "TypeScript", "Framer Motion", "Vercel"],
+    githubUrl: "https://github.com/Vader1970/components-library/tree/main",
+    liveUrl: "https://nextjs-components-library.vercel.app/",
+    type: "client",
+  },
   {
     title: "Chance Voight Investment Corporation",
     description: "UI/UX Designer and Web Developer for Chance Voight Investment Corporation.",
