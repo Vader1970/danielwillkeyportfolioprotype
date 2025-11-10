@@ -1,16 +1,6 @@
 import { Project } from "@/types/projects";
 
 export const projects: Project[] = [
-  {
-    title: "INNLIST Holiday Homes",
-    description:
-      "Designed in Figma and hand-coded within Rocketspark using HTML5, CSS3 and JavaScript to overcome platform limitations. The result is a fast, conversion-focused landing page that the client now wants to add to their main website.",
-    image: "/images/innlist-landing.webp",
-    categories: ["ui", "frontend"],
-    tools: ["Figma", "HTML5", "CSS3", "JavaScript", "Rocketspark"],
-    liveUrl: "https://www.innlist.co.nz/landing-page/",
-    type: "client"
-  },
   // {
   //   title: "Burst Digital Landing Page",
   //   description:
@@ -82,6 +72,16 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Vader1970/ai-resume-analyzer",
     liveUrl: "https://your-ai-resume-analyzer.vercel.app/",
     type: "personal",
+  },
+  {
+    title: "INNLIST Holiday Homes",
+    description:
+      "Designed in Figma and hand-coded within Rocketspark using HTML5, CSS3 and JavaScript to overcome platform limitations. The result is a fast, conversion-focused landing page that the client now wants to add to their main website.",
+    image: "/images/innlist-landing.webp",
+    categories: ["ui", "frontend"],
+    tools: ["Figma", "HTML5", "CSS3", "JavaScript", "Rocketspark"],
+    liveUrl: "https://www.innlist.co.nz/landing-page/",
+    type: "client"
   },
   {
     title: "Master Kerb & Concrete",

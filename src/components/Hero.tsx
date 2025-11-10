@@ -6,11 +6,14 @@ import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import AnimatedText from "@/components/animation/AnimatedText";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useMounted } from "@/hooks/use-mounted";
 
 // Define the Hero component
 export default function Hero() {
   // Determine if the device is mobile
   const isMobile = useIsMobile();
+  // Track if component has mounted (prevents hydration mismatch)
+  const mounted = useMounted();
   // State for tracking mouse position
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   // State for tracking window size
@@ -73,32 +76,34 @@ export default function Hero() {
   // Render the Hero section
   return (
     <section id='home' className='relative h-screen flex items-center justify-center overflow-hidden'>
-      {!isMobile && (
-        <div className='absolute inset-0 overflow-hidden'>
-          <motion.div
-            className='absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px]'
-            animate={{
-              x: calculateMovement("x", -0.05),
-              y: calculateMovement("y", -0.05),
-            }}
-            transition={{ type: "spring", damping: 50 }}
-          />
-          <motion.div
-            className='absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-500/20 rounded-full blur-[100px]'
-            animate={{
-              x: calculateMovement("x", 0.03),
-              y: calculateMovement("y", 0.03),
-            }}
-            transition={{ type: "spring", damping: 50 }}
-          />
-        </div>
-      )}
-      {isMobile && (
-        <div className='absolute inset-0 overflow-hidden'>
-          <div className='absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px]' />
-          <div className='absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-500/20 rounded-full blur-[100px]' />
-        </div>
-      )}
+      {/* Background gradients - render consistently to avoid hydration mismatch */}
+      <div className='absolute inset-0 overflow-hidden'>
+        {mounted && !isMobile ? (
+          <>
+            <motion.div
+              className='absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px]'
+              animate={{
+                x: calculateMovement("x", -0.05),
+                y: calculateMovement("y", -0.05),
+              }}
+              transition={{ type: "spring", damping: 50 }}
+            />
+            <motion.div
+              className='absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-500/20 rounded-full blur-[100px]'
+              animate={{
+                x: calculateMovement("x", 0.03),
+                y: calculateMovement("y", 0.03),
+              }}
+              transition={{ type: "spring", damping: 50 }}
+            />
+          </>
+        ) : (
+          <>
+            <div className='absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px]' />
+            <div className='absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-500/20 rounded-full blur-[100px]' />
+          </>
+        )}
+      </div>
 
       <div className='container-width z-10 px-4 text-center'>
         <motion.h1
@@ -151,7 +156,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
         className='absolute bottom-8 left-1/2 transform -translate-x-1/2'
-        style={{ marginBottom: isMobile ? "80px" : "0" }}
+        style={{ marginBottom: mounted && isMobile ? "80px" : "0" }}
       >
         <motion.div animate={{ y: [0, 12, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
           <ChevronDown className='text-light/60' size={24} />

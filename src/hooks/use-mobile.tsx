@@ -4,47 +4,56 @@ import * as React from "react";
 
 const MOBILE_BREAKPOINT = 768;
 
-// Define a type that includes both modern and legacy MediaQueryList methods
-type MediaQueryListWithLegacy = MediaQueryList & {
-  /** @deprecated Use addEventListener('change', callback) instead */
-  addListener?: (callback: (event: MediaQueryListEvent) => void) => void;
-  /** @deprecated Use removeEventListener('change', callback) instead */
-  removeListener?: (callback: (event: MediaQueryListEvent) => void) => void;
+// Define a type for legacy MediaQueryList methods (without deprecation warnings)
+type LegacyMediaQueryList = {
+  addListener: (callback: (event: MediaQueryListEvent) => void) => void;
+  removeListener: (callback: (event: MediaQueryListEvent) => void) => void;
 };
 
+/**
+ * Hook to detect if the device is mobile.
+ * Uses CSS media queries for better SSR compatibility.
+ * Returns false during SSR and initial render to ensure consistent hydration.
+ */
 export function useIsMobile() {
-  const [isMobile, setIsMobile] = React.useState<boolean | null>(null);
+  // Start with false to match SSR (assumes desktop by default)
+  // This ensures server and client render the same initial HTML
+  const [isMobile, setIsMobile] = React.useState<boolean>(false);
+  const [hasMounted, setHasMounted] = React.useState<boolean>(false);
 
   React.useEffect(() => {
-    // This only runs on the client
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    // Mark as mounted after hydration
+    setHasMounted(true);
+
+    // Use matchMedia for better performance and accuracy
+    // This matches CSS media queries exactly
+    const mediaQuery = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);
+
+    // Set initial value
+    setIsMobile(mediaQuery.matches);
+
+    // Handler function
+    const handleChange = (e: MediaQueryListEvent | MediaQueryList) => {
+      setIsMobile(e.matches);
     };
 
-    // Check immediately
-    checkIfMobile();
-
-    // Set up event listener with passive option for better performance
-    const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`) as MediaQueryListWithLegacy;
-
-    // Modern browsers use addEventListener, older browsers use addListener
-    if (typeof mql.addEventListener === "function") {
-      mql.addEventListener("change", checkIfMobile, { passive: true });
-      return () => mql.removeEventListener("change", checkIfMobile);
-    } else if (typeof mql.addListener === "function") {
-      // For older browsers (like IE) that don't support addEventListener
-      mql.addListener(checkIfMobile);
+    // Use modern API if available, fallback to legacy for older browsers
+    if (typeof mediaQuery.addEventListener === "function") {
+      mediaQuery.addEventListener("change", handleChange);
+      return () => mediaQuery.removeEventListener("change", handleChange);
+    } else if (typeof (mediaQuery as unknown as LegacyMediaQueryList).addListener === "function") {
+      // Legacy browser support (IE, very old browsers) - using type assertion to bypass deprecation warnings
+      const legacyMql = mediaQuery as unknown as LegacyMediaQueryList;
+      legacyMql.addListener(handleChange);
       return () => {
-        if (mql.removeListener) {
-          mql.removeListener(checkIfMobile);
-        }
+        legacyMql.removeListener(handleChange);
       };
     }
 
-    // Fallback if no event listener method is available
-    return () => {};
+    return () => { };
   }, []);
 
-  // Return false during SSR and initial render, then actual value after hydration
-  return isMobile === null ? false : isMobile;
+  // Return false during SSR and initial render to ensure consistent hydration
+  // Only return the actual value after the component has mounted on the client
+  return hasMounted ? isMobile : false;
 }
