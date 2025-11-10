@@ -2,12 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { geistSans, geistMono } from "./fonts";
 import "./globals.css";
 import Navbar from "@/components/navigation/Navbar";
+import Footer from "@/components/navigation/Footer";
 import { Toaster } from "@/components/ui/toaster";
-import dynamic from "next/dynamic";
-
-const Footer = dynamic(() => import("@/components/navigation/Footer"), {
-  loading: () => <p className='text-center py-10'>Loading Footer...</p>,
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://danielwillkeyportfolioprotype.vercel.app/"),
@@ -55,8 +51,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
+      {/* 
+        suppressHydrationWarning on <body> is needed because:
+        1. Browser extensions may add attributes (e.g., data-smart-converter-loaded)
+        2. These attributes are added after server render but before React hydration
+        3. This is the correct solution for external DOM modifications we can't control
+      */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-dark text-light flex flex-col min-h-screen`}
+        suppressHydrationWarning
       >
         <Navbar />
         <main className='flex-grow relative'>{children}</main>

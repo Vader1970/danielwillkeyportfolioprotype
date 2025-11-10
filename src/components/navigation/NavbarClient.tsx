@@ -15,9 +15,14 @@ interface NavbarClientProps {
  */
 const NavbarClient = ({ links }: NavbarClientProps): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  // Start with false to ensure consistent SSR/client initial render
+  // This prevents hydration mismatch if page loads with scroll position
   const [scrolled, setScrolled] = useState<boolean>(false);
 
   useEffect(() => {
+    // Check initial scroll position after mount
+    setScrolled(window.scrollY > 50);
+
     const handleScroll = (): void => {
       setScrolled(window.scrollY > 50);
     };
@@ -29,9 +34,8 @@ const NavbarClient = ({ links }: NavbarClientProps): JSX.Element => {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 px-4 md:px-8 lg:px-16 ${
-        scrolled ? "bg-dark/90 backdrop-blur-md py-4" : "bg-transparent py-6"
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 px-4 md:px-8 lg:px-16 ${scrolled ? "bg-dark/90 backdrop-blur-md py-4" : "bg-transparent py-6"
+        }`}
     >
       <div className='container-width'>
         <nav className='flex justify-between items-center'>
