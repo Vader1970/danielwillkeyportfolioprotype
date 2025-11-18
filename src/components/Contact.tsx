@@ -173,7 +173,7 @@ const Contact = () => {
       toast({
         title: "Success!",
         description: "Thanks for your message! I'll get back to you soon.",
-        variant: "default",
+        variant: "success",
       });
     } catch (error) {
       console.error("Error:", error);
