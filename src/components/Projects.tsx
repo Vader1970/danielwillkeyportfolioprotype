@@ -7,6 +7,7 @@ import AnimatedElement from "@/components/animation/AnimatedElements";
 import { ExternalLink } from "lucide-react";
 import GithubIcon from "@/components/icons/GithubIcon";
 import { projects } from "@/constants/projects";
+import { sendGAEvent } from "@next/third-parties/google";
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState<"all" | "personal" | "client">("all");
@@ -89,6 +90,13 @@ export default function Projects() {
                         href={project.liveUrl}
                         target='_blank'
                         rel='noopener noreferrer'
+                        onClick={() => {
+                          sendGAEvent("event", "project_click", {
+                            project_title: project.title,
+                            project_type: project.type,
+                            project_url: project.liveUrl,
+                          });
+                        }}
                         className={`flex items-center text-highlight hover:text-highlight/80 transition-colors duration-300 ${!project.githubUrl ? "ml-auto" : ""
                           }`}
                       >

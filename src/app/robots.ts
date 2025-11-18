@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://danielwillkeyportfolioprotype.vercel.app/sitemap.xml",
+    sitemap: "https://www.danwilkeyportfolio.com/sitemap.xml",
   };
 }

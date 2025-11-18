@@ -4,36 +4,48 @@ import "./globals.css";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/navigation/Footer";
 import { Toaster } from "@/components/ui/toaster";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://danielwillkeyportfolioprotype.vercel.app/"),
+  metadataBase: new URL("https://www.danwilkeyportfolio.com/"),
   title: "Daniel Wilkey | UX/UI Designer & Web Developer",
   description:
-    "Portfolio of Daniel Wilkey, UX/UI Designer & Web Developer based in Christchurch, New Zealand, specializing in end-to-end web development.",
+    "Daniel Wilkey is a Christchurch-based UX/UI Designer and Web Developer creating clean, user-focused digital experiences. I work across HTML, CSS, JavaScript, React, Next.js and modern no-code tools like Webflow, Framer, Wix and WordPress to design and build fast, responsive websites. Available for freelance projects and full-time opportunities across New Zealand and remotely.",
   applicationName: "Daniel Wilkey Portfolio",
   authors: [{ name: "Daniel Wilkey" }],
-  keywords: [
-    "UX/UI Designer",
-    "Web Developer",
-    "Christchurch",
-    "New Zealand",
-    "Portfolio",
-    "End-to-end web development",
-  ],
   robots: "index, follow",
   icons: {
     icon: [{ url: "/vader.png" }],
   },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_NZ",
-    url: "https://danielwilkey.com/",
+    url: "https://www.danwilkeyportfolio.com/",
     title: "Daniel Wilkey | UX/UI Designer & Web Developer",
     description:
-      "Portfolio of Daniel Wilkey, UX/UI Designer & Web Developer based in Christchurch, New Zealand, specializing in end-to-end web development.",
+      "Portfolio of Daniel Wilkey, Christchurch-based UX/UI Designer and Web Developer. I design and build user-focused websites using HTML, CSS, JavaScript, React, Next.js and no-code platforms like Webflow, Framer, Wix and Rocketspark.",
     siteName: "Daniel Wilkey Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Daniel Wilkey portfolio hero section",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Daniel Wilkey | UX/UI Designer & Web Developer",
+    description:
+      "Christchurch-based UX/UI Designer and Web Developer working across code and no-code to create clean, user-centered websites. Open to freelance and full-time work.",
+    images: ["/og-image.png"],
   },
 };
+
 
 export const viewport: Viewport = {
   themeColor: [
@@ -61,6 +73,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-dark text-light flex flex-col min-h-screen`}
         suppressHydrationWarning
       >
+        <GoogleAnalytics gaId="G-FQXE0DCM1D" />
         <Navbar />
         <main className='flex-grow relative'>{children}</main>
         <Toaster />
