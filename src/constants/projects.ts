@@ -137,40 +137,38 @@ export const projects: Project[] = [
     liveUrl: "https://www.geequiz.co.nz/landing-page",
     type: "client",
   },
-  {
-    title: "CVI Projects Limited",
-    description:
-      "Built a responsive landing page for CVI Projects Limited to attract trade professionals, highlighting their role in managing major residential and commercial developments.",
-    image: "/images/cvi-projects.webp",
-    categories: ["ui", "frontend"],
-    tools: [
-      "Figma",
-      "UX/UI Design",
-      "Photoshop",
-      "Next JS",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "SEO",
-      "Supabase",
-      "Resend",
-      "Shadcn UI",
-      "Vercel",
-      "Monday CRM"
-    ],
-    liveUrl: "https://www.cviprojects.com/",
-    type: "client",
-  },
+
+
+  // {
+  //   title: "Next JS and React JS Component Library",
+  //   description:
+  //     "A comprehensive library of 1,307 copy-and-paste React and Next.js components, paired with matching Figma assets for rapid app development.",
+  //   image: "/images/components-library.webp",
+  //   categories: ["frontend", "backend"],
+  //   tools: ["UX/UI Design", "Figma", "Next JS", "React JS", "Tailwind CSS", "TypeScript", "Framer Motion", "Vercel"],
+  //   githubUrl: "https://github.com/Vader1970/components-library/tree/main",
+  //   liveUrl: "https://nextjs-components-library.vercel.app/",
+  //   type: "client",
+  // },
 
   {
-    title: "Next JS and React JS Component Library",
+    title: "Travel Crush NZ",
     description:
-      "A comprehensive library of 1,307 copy-and-paste React and Next.js components, paired with matching Figma assets for rapid app development.",
-    image: "/images/components-library.webp",
+      "A travel blog built in WordPress and Elementor, featuring dynamic posts, pages, and archives designed for users to easily document and share their overseas adventures. ",
+    image: "/images/travelcrushnz.webp",
     categories: ["frontend", "backend"],
-    tools: ["UX/UI Design", "Figma", "Next JS", "React JS", "Tailwind CSS", "TypeScript", "Framer Motion", "Vercel"],
-    githubUrl: "https://github.com/Vader1970/components-library/tree/main",
-    liveUrl: "https://nextjs-components-library.vercel.app/",
+    tools: ["UX/UI Design", "Figma", "WordPress", "Elementor"],
+    liveUrl: "https://travelcrushnz.free.nf/",
+    type: "personal",
+  },
+  {
+    title: "Burst Digital",
+    description:
+      "Built Burst Digital's Webflow site from start to finish, handling research, UX/UI design, client communication, and final deployment.",
+    image: "/images/burst-digital.webp",
+    categories: ["ui", "frontend"],
+    tools: ["Figma", "Webflow", "UX/UI Design", "Content Management System"],
+    liveUrl: "https://www.burstdigital.co.nz/",
     type: "client",
   },
   {
@@ -218,13 +216,28 @@ export const projects: Project[] = [
     type: "client",
   },
   {
-    title: "Burst Digital",
+    title: "CVI Projects Limited",
     description:
-      "Built Burst Digital's Webflow site from start to finish, handling research, UX/UI design, client communication, and final deployment.",
-    image: "/images/burst-digital.webp",
+      "Built a responsive landing page for CVI Projects Limited to attract trade professionals, highlighting their role in managing major residential and commercial developments.",
+    image: "/images/cvi-projects.webp",
     categories: ["ui", "frontend"],
-    tools: ["Figma", "Webflow", "UX/UI Design", "Content Management System"],
-    liveUrl: "https://www.burstdigital.co.nz/",
+    tools: [
+      "Figma",
+      "UX/UI Design",
+      "Photoshop",
+      "Next JS",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "SEO",
+      "Supabase",
+      "Resend",
+      "Shadcn UI",
+      "Vercel",
+      "Monday CRM"
+    ],
+    liveUrl: "https://www.cviprojects.com/",
     type: "client",
   },
+
 ];
