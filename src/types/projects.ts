@@ -6,5 +6,6 @@ export interface Project {
   tools: string[];
   liveUrl: string;
   githubUrl?: string;
+  figmaUrl?: string;
   type: "personal" | "client";
 }
