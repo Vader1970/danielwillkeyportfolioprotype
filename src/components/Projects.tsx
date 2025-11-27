@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import AnimatedElement from "@/components/animation/AnimatedElements";
 import { ExternalLink } from "lucide-react";
 import GithubIcon from "@/components/icons/GithubIcon";
+import FigmaIcon from "@/components/icons/FigmaIcon";
 import { projects } from "@/constants/projects";
 import { sendGAEvent } from "@next/third-parties/google";
 
@@ -75,17 +76,30 @@ export default function Projects() {
                       ))}
                     </div>
                     <div className='flex-between mt-auto'>
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                          className='text-light/60 hover:text-highlight transition-colors duration-300'
-                          aria-label='View on GitHub'
-                        >
-                          <GithubIcon width={20} height={20} />
-                        </a>
-                      )}
+                      <div className='flex items-center gap-3'>
+                        {project.figmaUrl && (
+                          <a
+                            href={project.figmaUrl}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='text-light/60 hover:text-highlight transition-colors duration-300'
+                            aria-label='View on Figma'
+                          >
+                            <FigmaIcon width={20} height={20} />
+                          </a>
+                        )}
+                        {project.githubUrl && (
+                          <a
+                            href={project.githubUrl}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='text-light/60 hover:text-highlight transition-colors duration-300'
+                            aria-label='View on GitHub'
+                          >
+                            <GithubIcon width={20} height={20} />
+                          </a>
+                        )}
+                      </div>
                       <a
                         href={project.liveUrl}
                         target='_blank'
@@ -97,8 +111,7 @@ export default function Projects() {
                             project_url: project.liveUrl,
                           });
                         }}
-                        className={`flex items-center text-highlight hover:text-highlight/80 transition-colors duration-300 ${!project.githubUrl ? "ml-auto" : ""
-                          }`}
+                        className='flex items-center text-highlight hover:text-highlight/80 transition-colors duration-300'
                       >
                         View Project
                         <ExternalLink size={16} className='ml-1' />
