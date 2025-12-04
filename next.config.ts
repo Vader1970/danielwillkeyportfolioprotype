@@ -1,9 +1,13 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
+  
+  // Explicitly set the workspace root to avoid lockfile detection warnings
+  outputFileTracingRoot: path.resolve(process.cwd()),
 
   // Allow cross-origin requests in development
   allowedDevOrigins: ["127.0.0.1", "localhost"],
