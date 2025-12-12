@@ -85,7 +85,7 @@ export const projects: Project[] = [
     tools: ["Figma", "HTML5", "CSS3", "JavaScript", "Rocketspark"],
     figmaUrl: "https://www.figma.com/design/68U2xaWzZczOKnVhySL8gi/InnList?node-id=146-323&t=byFEtjXBP0z1gFSv-1",
     liveUrl: "https://www.innlist.co.nz/landing-page/",
-    type: "client"
+    type: "client",
   },
   {
     title: "Master Kerb & Concrete",
@@ -94,7 +94,8 @@ export const projects: Project[] = [
     image: "/images/master-concrete.webp",
     categories: ["ui", "frontend"],
     tools: ["Figma", "Photoshop", "Framer", "UX/UI Design"],
-    figmaUrl: "https://www.figma.com/design/08YT9I5azShN3yUBvTFszr/Master-Kerb---Concrete?node-id=0-1&t=qDHZLdylvsRgX1Wv-1",
+    figmaUrl:
+      "https://www.figma.com/design/08YT9I5azShN3yUBvTFszr/Master-Kerb---Concrete?node-id=0-1&t=qDHZLdylvsRgX1Wv-1",
     liveUrl: "https://www.masterkerb.co.nz/landing-page",
     type: "client",
   },
@@ -131,7 +132,7 @@ export const projects: Project[] = [
     liveUrl: "https://dans-brainwaze.vercel.app/",
     type: "personal",
   },
-  // 
+  //
   {
     title: "Gee Wiz",
     description:
@@ -143,7 +144,6 @@ export const projects: Project[] = [
     liveUrl: "https://www.geequiz.co.nz/landing-page",
     type: "client",
   },
-
 
   // {
   //   title: "Next JS and React JS Component Library",
@@ -174,77 +174,77 @@ export const projects: Project[] = [
     image: "/images/burst-digital.webp",
     categories: ["ui", "frontend"],
     tools: ["Figma", "Webflow", "UX/UI Design", "Content Management System"],
-    figmaUrl: "https://www.figma.com/design/8TWY5frdsBzTcz9T71V70E/Burst-Digital---New-Website?node-id=5999-10563&t=1m4YsZmjpHYH3Xlk-1",
+    figmaUrl:
+      "https://www.figma.com/design/8TWY5frdsBzTcz9T71V70E/Burst-Digital---New-Website?node-id=5999-10563&t=1m4YsZmjpHYH3Xlk-1",
     liveUrl: "https://www.burstdigital.co.nz/",
     type: "client",
   },
-  {
-    title: "Chance Voight Investment Corporation",
-    description: "UI/UX Designer and Web Developer for Chance Voight Investment Corporation.",
-    image: "/images/chance-voight.webp",
-    categories: ["ui"],
-    tools: [
-      "Figma",
-      "UX/UI Design",
-      "Photoshop",
-      "Next JS",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Analytics",
-      "Node JS",
-      "API's",
-      "Supabase",
-      "Resend",
-      "Vercel",
-      "Monday CRM"
-    ],
-    liveUrl: "https://www.chancevoight.com/",
-    type: "client",
-  },
-  {
-    title: "Patterson Wealth Partners",
-    description: "A clean, professional website built to reflect Patterson Wealth Partners' long-standing expertise in financial planning, wealth & tax estate management. Soon will be launched on the live domain.",
-    image: "/images/patterson-wealth-partners.webp",
-    categories: ["ui", "frontend", "backend"],
-    tools: [
-      "Figma",
-      "UX/UI Design",
-      "Photoshop",
-      "Next JS",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "API's",
-      "Pipedrive CRM",
-      "Vercel",
-    ],
-    liveUrl: "https://patterson-wealth-partners.vercel.app/",
-    type: "client",
-  },
-  {
-    title: "CVI Projects Limited",
-    description:
-      "Built a responsive landing page for CVI Projects Limited to attract trade professionals, highlighting their role in managing major residential and commercial developments.",
-    image: "/images/cvi-projects.webp",
-    categories: ["ui", "frontend"],
-    tools: [
-      "Figma",
-      "UX/UI Design",
-      "Photoshop",
-      "Next JS",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "SEO",
-      "Supabase",
-      "Resend",
-      "Shadcn UI",
-      "Vercel",
-      "Monday CRM"
-    ],
-    liveUrl: "https://www.cviprojects.com/",
-    type: "client",
-  },
-
+  // {
+  //   title: "Chance Voight Investment Corporation",
+  //   description: "UI/UX Designer and Web Developer for Chance Voight Investment Corporation.",
+  //   image: "/images/chance-voight.webp",
+  //   categories: ["ui"],
+  //   tools: [
+  //     "Figma",
+  //     "UX/UI Design",
+  //     "Photoshop",
+  //     "Next JS",
+  //     "TypeScript",
+  //     "Tailwind CSS",
+  //     "Framer Motion",
+  //     "Analytics",
+  //     "Node JS",
+  //     "API's",
+  //     "Supabase",
+  //     "Resend",
+  //     "Vercel",
+  //     "Monday CRM"
+  //   ],
+  //   liveUrl: "https://www.chancevoight.com/",
+  //   type: "client",
+  // },
+  // {
+  //   title: "Patterson Wealth Partners",
+  //   description: "A clean, professional website built to reflect Patterson Wealth Partners' long-standing expertise in financial planning, wealth & tax estate management. Soon will be launched on the live domain.",
+  //   image: "/images/patterson-wealth-partners.webp",
+  //   categories: ["ui", "frontend", "backend"],
+  //   tools: [
+  //     "Figma",
+  //     "UX/UI Design",
+  //     "Photoshop",
+  //     "Next JS",
+  //     "TypeScript",
+  //     "Tailwind CSS",
+  //     "Framer Motion",
+  //     "API's",
+  //     "Pipedrive CRM",
+  //     "Vercel",
+  //   ],
+  //   liveUrl: "https://patterson-wealth-partners.vercel.app/",
+  //   type: "client",
+  // },
+  // {
+  //   title: "CVI Projects Limited",
+  //   description:
+  //     "Built a responsive landing page for CVI Projects Limited to attract trade professionals, highlighting their role in managing major residential and commercial developments.",
+  //   image: "/images/cvi-projects.webp",
+  //   categories: ["ui", "frontend"],
+  //   tools: [
+  //     "Figma",
+  //     "UX/UI Design",
+  //     "Photoshop",
+  //     "Next JS",
+  //     "TypeScript",
+  //     "Tailwind CSS",
+  //     "Framer Motion",
+  //     "SEO",
+  //     "Supabase",
+  //     "Resend",
+  //     "Shadcn UI",
+  //     "Vercel",
+  //     "Monday CRM"
+  //   ],
+  //   liveUrl: "https://www.cviprojects.com/",
+  //   type: "client",
+  // },
 ];
