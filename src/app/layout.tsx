@@ -5,6 +5,7 @@ import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/navigation/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.danwilkeyportfolio.com/"),
@@ -46,7 +47,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#F8FAFC" },
@@ -73,9 +73,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-dark text-light flex flex-col min-h-screen`}
         suppressHydrationWarning
       >
-        <GoogleAnalytics gaId="G-FQXE0DCM1D" />
+        <GoogleAnalytics gaId='G-FQXE0DCM1D' />
         <Navbar />
-        <main className='flex-grow relative'>{children}</main>
+        <main className='flex-grow relative'>
+          {children}
+          <SpeedInsights />
+        </main>
         <Toaster />
         <Footer />
       </body>
