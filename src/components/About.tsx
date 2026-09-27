@@ -44,6 +44,7 @@ const About = () => {
               <div className='mt-6'>
                 <h4 className='font-semibold text-lg mb-2'>Experience</h4>
                 <ul className='space-y-2 text-muted'>
+                  <li>• Shopify/CIN 7 Web Assistant - Army & Outdoors (January 2026 - Present)</li>
                   <li>• UX/UI Designer & Web Developer - Chance Voight Investment Corporation (May 2024-October 2025)</li>
                   <li>• Freelance Web Developer - Self-employed (2022-Present)</li>
                   <li>• Pixel Perfect Web Designs - Web Designer & Developer (2022-2024)</li>

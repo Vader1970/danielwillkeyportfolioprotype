@@ -8,14 +8,13 @@ export const skills: SkillCategory[] = [
     icon: FigmaIcon,
     items: [
       "User Research",
+      "Information Architecture",
       "User Flows",
       "Wireframing",
       "Prototyping",
       "User Testing",
       "Accessibility",
       "Responsive Design",
-
-      "Interaction Design",
     ],
   },
   {
@@ -30,15 +29,15 @@ export const skills: SkillCategory[] = [
       "React.js",
       "Next.js",
       "Webflow",
-      "Framer Motion",
-      "GSAP",
       "WordPress",
+      "Framer",
+      "GSAP",
     ],
   },
   {
     category: "Backend & Data",
     icon: Server,
-    items: ["Node.js", "MongoDB", "Supabase", "APIs", "CMS Integration", "Strapi", "Express", "E-commerce", "Version Control", "Database Administration"],
+    items: ["Node.js", "MongoDB", "Supabase", "APIs", "CMS Integration", "Express", "E-commerce", "Version Control", "Database Administration", "Google Analytics 4", "Google Search Console"],
   },
   {
     category: "Tools & Practices",
